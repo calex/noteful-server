@@ -1,0 +1,7 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE folders (
+    id uuid PRIMARY KEY DEFAULT UUID_GENERATE_V4() NOT NULL,
+    folder_name TEXT NOT NULL,
+    date_created TIMESTAMPTZ DEFAULT now() NOT NULL
+);
